@@ -17,7 +17,23 @@
             <a class="nav-link" routerLinkActive='active'routerLink='/protegida'>Protegido</a>
           </li>
         </ul>
+        <div class="d-flex">
+          
+          <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+            <button  class="btn btn-outline-danger" (click)="auth.logout()">Salir</button>
+          </ng-container>
+
+          <ng-template #loggedOut>
+            <button  class="btn btn-outline-primary" (click)="auth.loginWithRedirect()">Entrar</button>
+          </ng-template>
+
+        </div>
       </div>
 
     </div>
   </nav>
+
+  <ul *ngIf="auth.user$ | async as user">
+    <li>{{ user.name }}</li>
+    <li>{{ user.email }}</li>
+  </ul> 

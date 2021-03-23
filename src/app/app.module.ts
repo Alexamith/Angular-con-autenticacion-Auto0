@@ -10,7 +10,6 @@ import { ModuloRutas } from './routes';
 
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
-import { BtnLoginComponent } from './components/btn-login/btn-login.component';
 
 
 @NgModule({
@@ -20,7 +19,6 @@ import { BtnLoginComponent } from './components/btn-login/btn-login.component';
     HomeComponent,
     ProtegidaComponent,
     PreciosComponent,
-    BtnLoginComponent
   ],
   imports: [
     BrowserModule,
