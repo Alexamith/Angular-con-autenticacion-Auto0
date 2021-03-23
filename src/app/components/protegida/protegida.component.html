@@ -1,1 +1,12 @@
-<p>protegida works!</p>
+<div *ngIf="auth.user$ | async as user" class="usuarioinfo">
+    <h1 >Información de {{user.name}}</h1>
+     <img src="{{user.picture}}" alt="">
+</div>
+
+<hr />
+
+<pre *ngIf="auth.user$ | async as user">
+    <code>
+        {{user | json}}
+    </code>
+</pre>
